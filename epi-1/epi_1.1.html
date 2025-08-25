@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Js</title>
+  </head>
+  <body>
+    <!-- 1- In first method we add h1 manually -->
+    <div id="root">
+      <!-- 2- In second method we add h1 dynamically through JS -->
+      <!-- <h1>Hello React JS</h1> -->
+    </div>
+    <script>
+      const rootDiv = document.getElementById("root");
+      const h1 = document.createElement("h1");
+      h1.innerHTML = `
+      Hello React Js
+      `;
+      h1.style.color = "blue";
+      rootDiv.appendChild(h1);
+    </script>
+    <!--3 In third we will add react JS through CDN -->
+    <!-- CDN full for is  Content Delivery Network that distributed network of servers that caches and delivers web content to users -->
+    <!-- ****************************** -->
+    <!-- This CDN  adds Core React JS -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <!-- This CDN adds DOM of react JS -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </body>
+</html>
