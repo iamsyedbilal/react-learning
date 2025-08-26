@@ -16,6 +16,15 @@ This repository documents my step-by-step progress as I explore and practice Rea
   - **epi_1.2** → First React code:
     - Using `React.createElement` to build an `<h1>`
     - Rendering with `ReactDOM.createRoot().render()`
+    - **epi_1.3** → Separating concerns:
+    - Moved React code to a separate **`app.js`** file
+    - Added external **`style.css`** for styling
+    - Wrote cleaner, modular code (HTML + JS + CSS separated)
+    - **epi_1.4** → Nested & sibling elements:
+    - Built nested elements using `React.createElement`
+    - Added multiple siblings inside a parent
+    - Observed how verbose and hard-to-read core React code becomes
+    - Motivation for moving towards **JSX**
 
 - (More episodes coming soon...)
 
