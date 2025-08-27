@@ -14,6 +14,7 @@ This repository documents my step-by-step progress as I explore and practice Rea
     2. Dynamically with Vanilla JS (`document.createElement`)
     3. Preparing React setup via CDN
   - **epi_1.2** → First React code:
+
     - Using `React.createElement` to build an `<h1>`
     - Rendering with `ReactDOM.createRoot().render()`
     - **epi_1.3** → Separating concerns:
@@ -25,6 +26,14 @@ This repository documents my step-by-step progress as I explore and practice Rea
     - Added multiple siblings inside a parent
     - Observed how verbose and hard-to-read core React code becomes
     - Motivation for moving towards **JSX**
+
+- [Episode 2](./epi_2) → **Setting up a React Project**
+
+  - Installed **React** and **ReactDOM** from npm
+  - Introduced **Parcel bundler** for development
+  - Used **ES6 imports** instead of CDN scripts
+  - Rendered first element (`<h1>Hey There Everyone</h1>`) with modern setup
+  - Learned how `index.html`, `app.js`, and `package.json` work together
 
 - (More episodes coming soon...)
 

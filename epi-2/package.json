@@ -1,0 +1,20 @@
+{
+  "name": "epi-2",
+  "version": "1.0.0",
+  "description": "This is epi-2 ",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "syed bilal",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
