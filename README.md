@@ -35,6 +35,18 @@ This repository documents my step-by-step progress as I explore and practice Rea
   - Rendered first element (`<h1>Hey There Everyone</h1>`) with modern setup
   - Learned how `index.html`, `app.js`, and `package.json` work together
 
+- [Episode 3](./epi_3) → **React Components**
+
+  - Introduced **React Components** (the building blocks of any React app)
+  - Learned the two types:
+    - **Class-based components** → older way, rarely used now
+    - **Function-based components** → modern standard (99% developers use these)
+  - Created first **functional component (`App`)** that returns JSX
+  - Added another simple component (`AnotherApp`) for practice
+  - Setup `package.json` scripts:
+    - `npm start` → runs app with Parcel and opens in browser
+    - `npm run build` → builds production-ready files
+
 - (More episodes coming soon...)
 
 ## 🎯 Goals of This Repo
