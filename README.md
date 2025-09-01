@@ -47,6 +47,17 @@ This repository documents my step-by-step progress as I explore and practice Rea
     - `npm start` → runs app with Parcel and opens in browser
     - `npm run build` → builds production-ready files
 
+- [Episode 4](./epi_4) → **Food Ordering App**
+- Build an `App Component`
+- Build a `Header Component` with Logo & Nav Items & Cart
+- Build a `Body Component`
+- Build `RestaurantCard Component`
+- Use `static data initially`
+- Make your `card dynamic`(pass in props)
+- `Props` - passing arguments to a function - Destructuring
+- `Render` your cards with dynamic data of restaurants
+- Use `Array.map` to render all the restaurants
+
 - (More episodes coming soon...)
 
 ## 🎯 Goals of This Repo
