@@ -106,3 +106,12 @@ html {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
+
+.filter {
+  padding: 2rem 0 0 4rem;
+}
+
+.filter .filter-btn {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}

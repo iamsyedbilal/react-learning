@@ -14,14 +14,13 @@ This repository documents my step-by-step progress as I explore and practice Rea
     2. Dynamically with Vanilla JS (`document.createElement`)
     3. Preparing React setup via CDN
   - **epi_1.2** → First React code:
-
     - Using `React.createElement` to build an `<h1>`
     - Rendering with `ReactDOM.createRoot().render()`
-    - **epi_1.3** → Separating concerns:
+  - **epi_1.3** → Separating concerns:
     - Moved React code to a separate **`app.js`** file
     - Added external **`style.css`** for styling
     - Wrote cleaner, modular code (HTML + JS + CSS separated)
-    - **epi_1.4** → Nested & sibling elements:
+  - **epi_1.4** → Nested & sibling elements:
     - Built nested elements using `React.createElement`
     - Added multiple siblings inside a parent
     - Observed how verbose and hard-to-read core React code becomes
@@ -47,16 +46,40 @@ This repository documents my step-by-step progress as I explore and practice Rea
     - `npm start` → runs app with Parcel and opens in browser
     - `npm run build` → builds production-ready files
 
-- [Episode 4](./epi_4) → **Food Ordering App**
-- Build an `App Component`
-- Build a `Header Component` with Logo & Nav Items & Cart
-- Build a `Body Component`
-- Build `RestaurantCard Component`
-- Use `static data initially`
-- Make your `card dynamic`(pass in props)
-- `Props` - passing arguments to a function - Destructuring
-- `Render` your cards with dynamic data of restaurants
-- Use `Array.map` to render all the restaurants
+- [Episode 4](./epi_4) → **Food Ordering App (Basic Structure)**
+
+  - Built an `App Component`
+  - Built a `Header Component` with:
+    - Logo
+    - Navigation Items
+    - Cart section
+  - Built a `Body Component`
+  - Built a `RestaurantCard Component`
+  - Used **static mock data** initially (from `mockData.js`)
+  - Made cards **dynamic with props**:
+    - Props = just a JavaScript object
+    - Destructured props for cleaner code (`const { name, cuisines } = props`)
+  - Rendered multiple restaurants dynamically using **Array.map()**
+
+- [Episode 5](./epi_5) → **Folder Structure, Hooks & Props Deep Dive**
+  - Organized project with proper **folder structure**:
+    - `components/` → React Components
+    - `utils/` → constants, mock data, helpers
+  - Introduced **React Hooks**:
+    - `useState` → to manage state (example: filtering restaurants)
+  - Built a **Filter button** to show _Top Rated Restaurants_
+  - Reinforced the concept of **Props**:
+    - Props = just a JavaScript object
+    - Used **destructuring** for cleaner code:
+      ```js
+      const { name, cuisines } = props;
+      ```
+  - Discussed **Config-driven UI**:
+    - Real-world apps render UI based on backend data/config
+    - This allows flexibility and scalability
+    - A good frontend engineer = good UI layer + good data layer
+
+---
 
 - (More episodes coming soon...)
 
