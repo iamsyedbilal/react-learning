@@ -60,6 +60,34 @@ html {
   color: inherit;
 }
 
+.login-btn,
+.search-btn,
+.filter-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 12px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.login-btn,
+.search-btn,
+.filter-btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn,
+.search-btn,
+.filter-btn:active {
+  transform: scale(0.95);
+}
+
 .res-container {
   display: flex;
   flex-wrap: wrap;
@@ -107,11 +135,38 @@ html {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.filter {
+.filter,
+.search {
   padding: 2rem 0 0 4rem;
 }
 
 .filter .filter-btn {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
+}
+
+.shimmer-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 3rem 2rem 2rem 2rem;
+  justify-content: space-around;
+}
+
+.shimmer-card {
+  width: 250px;
+  height: 200px;
+  border-radius: 1.2rem;
+  background-color: #bdb3b3e0;
+  cursor: pointer;
+}
+
+.search-input {
+  padding: 10px 24px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

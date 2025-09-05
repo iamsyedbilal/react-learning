@@ -61,7 +61,7 @@ This repository documents my step-by-step progress as I explore and practice Rea
     - Destructured props for cleaner code (`const { name, cuisines } = props`)
   - Rendered multiple restaurants dynamically using **Array.map()**
 
-- [Episode 5](./epi_5) → **Folder Structure, Hooks & Props Deep Dive**
+- [Episode 5](./epi_4) → **Folder Structure, Hooks & Props Deep Dive**
   - Organized project with proper **folder structure**:
     - `components/` → React Components
     - `utils/` → constants, mock data, helpers
@@ -78,6 +78,19 @@ This repository documents my step-by-step progress as I explore and practice Rea
     - Real-world apps render UI based on backend data/config
     - This allows flexibility and scalability
     - A good frontend engineer = good UI layer + good data layer
+- [Episode 6](./epi_4) → **Shimmer, useEffect & Dynamic Data**
+  - Added a **Shimmer UI** (loading placeholder) while data is being fetched
+  - Introduced **`useEffect` hook**:
+    - Used for side-effects (like API calls)
+    - Fetches restaurant data from **real backend API** instead of static mock data
+  - Implemented **dynamic rendering**:
+    - Data is loaded and displayed once the API response is received
+  - Built a **Search functionality**:
+    - Input box + button to filter restaurants by name
+    - Combined with existing **Top Rated filter**
+  - Key learning:
+    - Difference between **useState vs useEffect**
+    - Importance of **conditional rendering** (Shimmer when loading vs cards when data is ready)
 
 ---
 
