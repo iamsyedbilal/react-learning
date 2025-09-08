@@ -14,6 +14,11 @@ html {
   font-size: 62.5%;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -169,4 +174,87 @@ html {
   border-radius: 12px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
+  font-size: 2rem;
+  height: 100vh;
+  text-align: center;
+}
+
+.menu-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.menu-header h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.menu-header h6 {
+  font-size: 1rem;
+}
+
+.menu-header img {
+  width: 180px;
+  border-radius: 12px;
+  margin: 12px 0;
+}
+
+.menu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.item-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.filter-section {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .menu-header img {
+    width: 120px;
+  }
 }
