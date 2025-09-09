@@ -79,6 +79,7 @@ This repository documents my step-by-step progress as I explore and practice Rea
     - This allows flexibility and scalability
     - A good frontend engineer = good UI layer + good data layer
 - [Episode 6](./epi_4) → **Shimmer, useEffect & Dynamic Data**
+
   - Added a **Shimmer UI** (loading placeholder) while data is being fetched
   - Introduced **`useEffect` hook**:
     - Used for side-effects (like API calls)
@@ -89,8 +90,47 @@ This repository documents my step-by-step progress as I explore and practice Rea
     - Input box + button to filter restaurants by name
     - Combined with existing **Top Rated filter**
   - Key learning:
+
     - Difference between **useState vs useEffect**
     - Importance of **conditional rendering** (Shimmer when loading vs cards when data is ready)
+
+    - [Episode 7](./epi_4) → **React Router & Dynamic Routing**
+
+  - Installed and setup **React Router**
+  - Created multiple pages/components:
+    - `Home`
+    - `About`
+    - `Contact`
+    - `Cart`
+    - `RestaurantMenu` (dynamic route)
+  - Used **`<Link>`** for navigation (instead of `<a>` to avoid page reloads)
+  - Introduced **Dynamic Routing**:
+    - Example: `/restaurant/:id`
+    - Fetches menu data for a specific restaurant using route params
+  - Updated **Header navigation** to use React Router
+  - Key learning: how to switch between pages **without reloading** (SPA behavior)
+
+  - [Episode 8](./epi_4) → **Class Components vs Function Components**
+  - **Class Components**:
+    - Extend `React.Component`
+    - Use `render()` method
+    - State managed with `this.state`
+    - Lifecycle methods:
+      - `constructor`
+      - `componentDidMount`
+      - `componentDidUpdate`
+      - `componentWillUnmount`
+  - **Function Components**:
+    - Simpler, just a JS function
+    - Use **Hooks** (`useState`, `useEffect`) instead of lifecycle methods
+    - Cleaner and shorter code
+  - **Key Differences**:
+    - Classes are **stateful** with lifecycle methods
+    - Functions achieve same with **hooks**
+    - Classes are rarely used in modern React (legacy code only)
+  - **Hands-on**:
+    - Built a `UserClass` component with `constructor`, `render`, and lifecycle logs
+    - Rewrote the same with a functional component using `useState` + `useEffect`
 
 ---
 
