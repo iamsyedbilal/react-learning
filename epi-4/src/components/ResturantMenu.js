@@ -1,34 +1,19 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { MENU_API, CDN_URL } from "../utils/constants";
+import { CDN_URL } from "../utils/constants";
 import ShimmerMenu from "./ShimmerMenu";
+import useResturantMenu from "../hooks/useResturantMenu";
+import useVegMenu from "../hooks/useVegMenu";
 
 function ResturantMenu() {
-  const [resInfo, setResInfo] = useState(null);
-  const [vegMenu, setVegMenu] = useState(false);
-
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchApiData();
-  }, []);
+  const resInfo = useResturantMenu(resId);
 
-  async function fetchApiData() {
-    const data = await fetch(MENU_API + resId);
-    const json = await data.json();
-    setResInfo(json.data);
-  }
+  const { vegMenu, setVegMenu, filteredItems } = useVegMenu(resInfo);
 
   if (resInfo === null) return <ShimmerMenu />;
 
   const { offers } = resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle;
-
-  const { itemCards } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-
-  const filteredItems = vegMenu
-    ? itemCards.filter((item) => item?.card?.info?.isVeg)
-    : itemCards;
 
   const {
     name,
@@ -77,6 +62,7 @@ function ResturantMenu() {
         <input
           type="checkbox"
           id="veg-filter"
+          checked={vegMenu}
           onChange={(e) => setVegMenu(e.target.checked)}
         />
       </div>
