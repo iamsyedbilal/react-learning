@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { RESTURANT_URL } from "../utils/constants";
 import ResturantCard from "./ResturantCart";
+import useUserOnlineStatus from "../hooks/useUserOnlineStatus";
 import { Link } from "react-router";
 import Shimmer from "./Shimmer";
 
@@ -26,6 +27,16 @@ function Body() {
     setListOfResturants(restaurants);
     setFilteredRestaurant(restaurants);
   };
+
+  const onlineStatus = useUserOnlineStatus();
+
+  if (!onlineStatus) {
+    return (
+      <h1 style={{ textAlign: "center", marginTop: "2rem" }}>
+        ⚠️ Looks like you are not connected to the internet
+      </h1>
+    );
+  }
 
   return listOfResturants.length === 0 ? (
     <Shimmer />

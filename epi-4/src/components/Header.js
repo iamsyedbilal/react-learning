@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
+import useUserOnlineStatus from "../hooks/useUserOnlineStatus";
 
 function Header() {
   const [btnstate, BtnState] = useState("Login");
@@ -8,6 +9,8 @@ function Header() {
   function btnClick(params) {
     btnstate === "Login" ? BtnState("Logout") : BtnState("Login");
   }
+
+  const onlineStatus = useUserOnlineStatus();
 
   return (
     <div className="header">
@@ -30,6 +33,10 @@ function Header() {
           <li>
             <Link to={"/cart"}>Cart</Link>
           </li>
+          <li>
+            <Link to={"/grocery"}>Grocery</Link>
+          </li>
+          <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
           <button className="login-btn" onClick={btnClick}>
             {btnstate}
           </button>
