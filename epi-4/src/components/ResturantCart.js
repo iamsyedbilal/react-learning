@@ -7,14 +7,21 @@ function ResturantCard(props) {
     resData;
 
   return (
-    <div className="res-card">
-      <img src={CDN_URL + cloudinaryImageId} alt={name} />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{costForTwo}</h4>
-      <h4>
-        Delivery Time <span>{sla.deliveryTime} minutes</span>
+    <div className="w-64 p-4 bg-white rounded-2xl shadow-md hover:shadow-lg  cursor-pointer transition">
+      <img
+        src={CDN_URL + cloudinaryImageId}
+        alt={name}
+        className="w-full h-40 object-cover rounded-lg mb-3"
+      />
+      <h3 className="text-lg font-semibold text-gray-800 truncate">{name}</h3>
+      <h4 className="text-sm text-gray-600 truncate">{cuisines.join(", ")}</h4>
+      <h4 className="text-sm text-gray-700">{avgRating} ⭐</h4>
+      <h4 className="text-sm text-gray-700">{costForTwo}</h4>
+      <h4 className="text-sm text-gray-600">
+        Delivery Time:{" "}
+        <span className="font-medium text-gray-800">
+          {sla.deliveryTime} min
+        </span>
       </h4>
     </div>
   );

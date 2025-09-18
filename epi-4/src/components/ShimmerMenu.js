@@ -1,34 +1,40 @@
 function ShimmerMenu() {
   return (
-    <div className="shimmer-menu">
+    <div className="max-w-5xl mx-auto px-4 py-6 animate-pulse">
       {/* Restaurant Info Skeleton */}
-      <div className="shimmer-header">
-        <div className="shimmer-box img"></div>
-        <div className="shimmer-details">
-          <div className="shimmer-line title"></div>
-          <div className="shimmer-line subtitle"></div>
-          <div className="shimmer-line subtitle small"></div>
+      <div className="flex items-center gap-6 mb-8">
+        <div className="w-32 h-32 bg-gray-200 rounded-lg"></div>
+        <div className="flex-1 space-y-3">
+          <div className="h-6 w-48 bg-gray-200 rounded"></div>
+          <div className="h-4 w-64 bg-gray-200 rounded"></div>
+          <div className="h-4 w-40 bg-gray-200 rounded"></div>
         </div>
       </div>
 
       {/* Offers Skeleton */}
-      <h2 className="shimmer-line section-title"></h2>
-      <div className="shimmer-offers">
-        {[1, 2, 3].map((n) => (
-          <div key={n} className="shimmer-box offer"></div>
-        ))}
+      <div className="mb-6">
+        <div className="h-6 w-32 bg-gray-200 rounded mb-4"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {[1, 2, 3].map((n) => (
+            <div key={n} className="h-20 bg-gray-200 rounded-lg"></div>
+          ))}
+        </div>
       </div>
 
       {/* Items Skeleton */}
-      <h2 className="shimmer-line section-title"></h2>
-      <div className="shimmer-items">
-        {[1, 2, 3, 4].map((n) => (
-          <div key={n} className="shimmer-card">
-            <div className="shimmer-line card-title"></div>
-            <div className="shimmer-line card-subtitle"></div>
-            <div className="shimmer-box card-img"></div>
-          </div>
-        ))}
+      <div>
+        <div className="h-6 w-40 bg-gray-200 rounded mb-4"></div>
+        <div className="space-y-6">
+          {[1, 2, 3, 4].map((n) => (
+            <div key={n} className="flex justify-between items-start gap-4">
+              <div className="flex-1 space-y-3">
+                <div className="h-5 w-48 bg-gray-200 rounded"></div>
+                <div className="h-4 w-32 bg-gray-200 rounded"></div>
+              </div>
+              <div className="w-28 h-24 bg-gray-200 rounded-lg"></div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

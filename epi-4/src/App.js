@@ -9,11 +9,15 @@ import { Outlet } from "react-router";
 // * On-Demand Loading
 // * Dynamic Import
 
-function App(params) {
+function App() {
   return (
-    <div className="app">
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      {/* Header always visible */}
       <Header />
-      <Outlet />
+      {/* Main content */}
+      <main className="flex-1">
+        <Outlet />
+      </main>
     </div>
   );
 }
