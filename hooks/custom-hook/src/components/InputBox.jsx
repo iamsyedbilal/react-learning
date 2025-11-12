@@ -1,4 +1,3 @@
-import { useId } from "react";
 import "../App.css";
 
 function InputBox({
@@ -7,21 +6,18 @@ function InputBox({
   amount,
   onAmountChange,
   onCurrencyChange,
-  currencyOption = [],
   selectCurrency = "usd",
+  currencyOptions = [],
   amountDisable = false,
   currencyDisable = false,
 }) {
-  const amountId = useId();
-
   return (
     <div className={`input-box ${className || ""}`}>
-      <div className="input-section">
-        <label htmlFor={amountId}>{label}</label>
+      <div>
+        <label htmlFor="">{label}</label>
         <input
-          id={amountId}
           type="number"
-          placeholder="Amount"
+          placeholder="Enter Amount"
           disabled={amountDisable}
           value={amount}
           onChange={(e) =>
@@ -29,19 +25,22 @@ function InputBox({
           }
         />
       </div>
-
-      <div className="currency-section">
+      <div>
         <p>Currency Type</p>
         <select
           value={selectCurrency}
           onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
           disabled={currencyDisable}
         >
-          {currencyOption.map((currency) => (
-            <option key={currency} value={currency}>
-              {currency}
-            </option>
-          ))}
+          {currencyOptions.length > 0 ? (
+            currencyOptions.map((currency) => (
+              <option key={currency} value={currency}>
+                {currency.toUpperCase()}
+              </option>
+            ))
+          ) : (
+            <option>Loading...</option>
+          )}
         </select>
       </div>
     </div>
