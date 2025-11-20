@@ -1,0 +1,2 @@
+supabase_name=supabase-curd/auth
+supabase_password=PPuOJtSfnPrk6zgn
