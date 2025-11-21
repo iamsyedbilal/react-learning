@@ -13,15 +13,30 @@ function TaskManager() {
   }
 
   useEffect(() => {
-    fetchTasks();
+    async function loadTasks() {
+      await fetchTasks();
+    }
+
+    loadTasks();
   }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { error } = await supabase
-      .from("Tasks")
-      .insert([{ title: newTaskTitle, description: newTaskDescription }]);
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      console.error("User not logged in!");
+      return;
+    }
+    const { error } = await supabase.from("Tasks").insert([
+      {
+        title: newTaskTitle,
+        description: newTaskDescription,
+        email: user.email,
+      },
+    ]);
 
     if (!error) {
       setNewTaskTitle("");
