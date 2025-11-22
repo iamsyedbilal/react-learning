@@ -6,6 +6,15 @@ function TaskManager() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
   const [newTaskDescription, setNewTaskDescription] = useState("");
   const [editingTask, setEditingTask] = useState(null);
+  const [currentSession, setCurrentSession] = useState(null);
+
+  useEffect(() => {
+    async function fetchSession() {
+      const { data } = await supabase.auth.getSession();
+      setCurrentSession(data.session);
+    }
+    fetchSession();
+  }, []);
 
   async function fetchTasks() {
     const { data, error } = await supabase.from("Tasks").select("*");
@@ -214,43 +223,45 @@ function TaskManager() {
                   {task.description}
                 </p>
 
-                <div style={{ display: "flex", gap: "10px" }}>
-                  <button
-                    onClick={() =>
-                      setEditingTask({
-                        id: task.id,
-                        title: task.title,
-                        description: task.description,
-                      })
-                    }
-                    style={{
-                      flex: 1,
-                      padding: "10px",
-                      background: "#ffc107",
-                      color: "white",
-                      borderRadius: "8px",
-                      border: "none",
-                      cursor: "pointer",
-                    }}
-                  >
-                    ✏ Edit
-                  </button>
+                {currentSession.user.email === task.email && (
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    <button
+                      onClick={() =>
+                        setEditingTask({
+                          id: task.id,
+                          title: task.title,
+                          description: task.description,
+                        })
+                      }
+                      style={{
+                        flex: 1,
+                        padding: "10px",
+                        background: "#ffc107",
+                        color: "white",
+                        borderRadius: "8px",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                    >
+                      ✏ Edit
+                    </button>
 
-                  <button
-                    onClick={() => handleDelete(task.id)}
-                    style={{
-                      flex: 1,
-                      padding: "10px",
-                      background: "#f44336",
-                      color: "white",
-                      borderRadius: "8px",
-                      border: "none",
-                      cursor: "pointer",
-                    }}
-                  >
-                    🗑 Delete
-                  </button>
-                </div>
+                    <button
+                      onClick={() => handleDelete(task.id)}
+                      style={{
+                        flex: 1,
+                        padding: "10px",
+                        background: "#f44336",
+                        color: "white",
+                        borderRadius: "8px",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                    >
+                      🗑 Delete
+                    </button>
+                  </div>
+                )}
               </>
             )}
           </li>
